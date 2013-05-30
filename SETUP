@@ -1,0 +1,11 @@
+#!/bin/sh
+
+echo "Symlinking.."
+ln -s .vimrc -t$HOME
+ln -s ../vim-pathogen/autoload/pathogen.vim -tautoload
+
+echo "Updating submodules"
+git submodule update --init
+
+echo "Remember to check that other symlinks are ok"
+echo "Remember to install exuberant-ctags -package"
