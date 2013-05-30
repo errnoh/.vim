@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo "Symlinking.."
-ln -s .vimrc -t$HOME
+ln -s .vim/.vimrc -t$HOME
 ln -s ../vim-pathogen/autoload/pathogen.vim -tautoload
 
 echo "Updating submodules"
