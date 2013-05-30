@@ -1,0 +1,11 @@
+adding bundles:
+  git submodule add git://github.com/majutsushi/tagbar bundle/tagbar
+
+tagbar:
+  Sadly the official ctags support seems to be crappy. No signatures, no scope2kind.. etc
+
+  https://github.com/rgo/exuberant-ctags/blob/master/go.c (parsing)
+  https://github.com/majutsushi/tagbar/blob/master/doc/tagbar.txt (doc)
+
+  ctags -f - --format=2 --excmd=pattern --extra= --fields=nksaSmt test.go (better debug output)
+

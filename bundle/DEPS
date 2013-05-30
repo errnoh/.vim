@@ -1,0 +1,4 @@
+tagbar: 
+  exuberant-ctags
+  https://github.com/jstemmer/gotags
+
