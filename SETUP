@@ -9,4 +9,4 @@ git submodule update --init
 
 echo "Remember: apt-get install exuberant-ctags"
 echo "Remember: go get -u github.com/jstemmer/gotags"
-echo "Remember: go get -u github.com/golang/lint"
+echo "Remember: go get -u github.com/golang/lint/golint"
