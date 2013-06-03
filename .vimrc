@@ -45,3 +45,10 @@ let g:tagbar_type_go = {
     \ 'ctagsbin'  : 'gotags',
     \ 'ctagsargs' : '-sort -silent'
 \ }
+
+" Golint ( https://github.com/golang/lint ) "
+function! s:GoLint()
+  cexpr system("golint " . shellescape(expand('%')))
+  copen
+endfunction
+command! GoLint :call s:GoLint()
