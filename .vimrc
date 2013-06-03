@@ -10,9 +10,32 @@ set runtimepath+=$GOROOT/misc/vim
 filetype plugin indent on
 syntax on
 
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+set autoindent
+set number
+
+" Encoding "
+if has("multi_byte")
+     set encoding=utf-8
+     setglobal fileencoding=utf-8
+     set nobomb
+     set termencoding=utf-8
+     set fileencodings=utf-8,ucs-bom,iso-8859-15,iso-8859-3
+else
+     echoerr "Sorry, this version of (g)vim was not compiled with +multi_byte"
+endif
+
 " colors "
 set background=dark
 colorscheme vivify1
+
+" NERDTree "
+nnoremap <Leader>n :NERDTreeToggle<CR>
+
+" Gundo "
+nnoremap <Leader>u :GundoToggle<CR>
 
 " tagbar "
 nmap <F8> :TagbarToggle<CR>

@@ -72,8 +72,8 @@ set t_Co=256
     highlight SpellLocal          guifg=#9ccc9c ctermfg=151                           gui=none cterm=none
     highlight SpellRare           guifg=#bc8cbc ctermfg=139                           gui=none cterm=none
     highlight Statement           guifg=#e3ceab ctermfg=222                           gui=none cterm=none
-    highlight StatusLine          guifg=#313633 ctermfg=72  guibg=#ccdc90 ctermbg=black gui=none cterm=none
-    highlight StatusLineNC        guifg=#2e3330 ctermfg=72  guibg=#88b090 ctermbg=108 gui=none cterm=none
+    highlight StatusLine          guifg=#313633 ctermfg=72  guibg=#ccdc90 ctermbg=236 gui=none cterm=none
+    highlight StatusLineNC        guifg=#2e3330 ctermfg=72  guibg=#88b090 ctermbg=234 gui=none cterm=none
     highlight StorageClass        guifg=#c3bf9f ctermfg=187                           gui=none cterm=none
     highlight String              guifg=#cc9393 ctermfg=174                           gui=none cterm=none
     highlight Structure           guifg=#ffffff ctermfg=15  guibg=#333333 ctermbg=236 gui=none cterm=none
