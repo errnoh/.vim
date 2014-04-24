@@ -7,6 +7,12 @@ ln -s ../vim-pathogen/autoload/pathogen.vim -tautoload
 echo "Updating submodules"
 git submodule update --init
 
-echo "Remember: apt-get install exuberant-ctags"
-echo "Remember: go get -u github.com/jstemmer/gotags"
-echo "Remember: go get -u github.com/golang/lint/golint"
+echo "-- Remember--"
+echo "apt-get install exuberant-ctags"
+echo "go get -u github.com/jstemmer/gotags"
+echo "go get -u github.com/golang/lint/golint"
+echo "go get -u code.google.com/p/go.tools/cmd/vet"
+echo "go get -u code.google.com/p/go.tools/cmd/gotype"
+echo "go get code.google.com/p/go.tools/cmd/oracle"
+echo "-------------"
+
