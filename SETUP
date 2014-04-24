@@ -1,18 +1,44 @@
 #!/bin/sh
 
 echo "Symlinking.."
-ln -s .vim/.vimrc -t$HOME
-ln -s ../vim-pathogen/autoload/pathogen.vim -tautoload
+if [[ "$(uname)" = "Darwin" ]] ; then
+    ln -s .vim/.vimrc $HOME
+else
+    ln -s .vim/.vimrc -t$HOME
+fi
 
 echo "Updating submodules"
 git submodule update --init
 
-echo "-- Remember--"
-echo "apt-get install exuberant-ctags"
-echo "go get -u github.com/jstemmer/gotags"
-echo "go get -u github.com/golang/lint/golint"
-echo "go get -u code.google.com/p/go.tools/cmd/vet"
-echo "go get -u code.google.com/p/go.tools/cmd/gotype"
-echo "go get code.google.com/p/go.tools/cmd/oracle"
-echo "-------------"
+echo "External stuff.."
+if [[ -z "$GOPATH" ]] ; then
+    echo "-- Remember--"
+    echo "apt-get install exuberant-ctags"
+    echo "go get -u github.com/jstemmer/gotags"
+    echo "go get -u github.com/golang/lint/golint"
+    echo "go get -u code.google.com/p/go.tools/cmd/vet"
+    echo "go get -u code.google.com/p/go.tools/cmd/gotype"
+    echo "go get code.google.com/p/go.tools/cmd/oracle"
+    echo "-------------"
+else
+    go get -u github.com/jstemmer/gotags
+    go get -u github.com/golang/lint/golint
+    go get -u code.google.com/p/go.tools/cmd/vet
+    go get -u code.google.com/p/go.tools/cmd/gotype
+    go get code.google.com/p/go.tools/cmd/oracle
+
+    if [[ "$(uname)" = "Darwin" ]] ; then
+        brew install ctags-exuberant
+    else
+        apt-get install exuberant-ctags
+    fi
+fi
+
+echo "Installing plugins.."
+vim +PluginInstall +qall
+echo "Plugins installed"
+
+echo "Compiling YCM (needs cmake, downloads clang)"
+cd ~/.vim/bundle/YouCompleteMe
+./install.sh --clang-completer
 

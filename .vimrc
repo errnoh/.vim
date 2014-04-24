@@ -1,10 +1,25 @@
-" Pathogen "
-execute pathogen#infect()
-
-" Go support "
+" Vundler "
+set nocompatible
 filetype off
-filetype plugin indent off
-set runtimepath+=$GOROOT/misc/vim
+
+set rtp+=~/.vim/bundle/Vundle.vim
+
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'sjl/gundo.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'majutsushi/tagbar'
+Plugin 'tpope/vim-sensible'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'fatih/vim-go'
+
+call vundle#end()
+
+filetype plugin indent on
+" run :PluginInstall inside vim "
 
 " generic stuff"
 filetype plugin indent on
@@ -15,6 +30,11 @@ set shiftwidth=4
 set softtabstop=4
 set autoindent
 set number
+
+" vim-go "
+
+let g:go_play_open_browser = 0
+let g:go_bin_path = expand("~/bin")
 
 " Encoding "
 if has("multi_byte")
@@ -68,10 +88,3 @@ let g:tagbar_type_go = {
     \ 'ctagsbin'  : 'gotags',
     \ 'ctagsargs' : '-sort -silent'
 \ }
-
-" Golint ( https://github.com/golang/lint ) "
-function! s:GoLint()
-  cexpr system("golint " . shellescape(expand('%')))
-  copen
-endfunction
-command! GoLint :call s:GoLint()
