@@ -17,6 +17,7 @@ Plugin 'tpope/vim-sensible'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'fatih/vim-go'
 Plugin 'kien/ctrlp.vim'
+Plugin 'Lokaltog/vim-easymotion'
 
 call vundle#end()
 
@@ -32,6 +33,14 @@ set shiftwidth=4
 set softtabstop=4
 set autoindent
 set number
+
+let mapleader=" "
+
+" easymotion "
+" <leader><leader>b - upwards"
+" <leader><leader>s - search
+" <leader><leader>w - downwards"
+map <Leader><Leader> <Plug>(easymotion-prefix)
 
 " ctrl-p "
 let g:ctrlp_map = '<c-p>'
