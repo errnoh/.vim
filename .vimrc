@@ -8,6 +8,7 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rails'
 Plugin 'sjl/gundo.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -15,6 +16,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-sensible'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'fatih/vim-go'
+Plugin 'kien/ctrlp.vim'
 
 call vundle#end()
 
@@ -31,10 +33,18 @@ set softtabstop=4
 set autoindent
 set number
 
-" vim-go "
+" ctrl-p "
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
 
+" vim-go "
 let g:go_play_open_browser = 0
 let g:go_bin_path = expand("~/bin")
+
+" eclim (support for YCM)"
+
+let g:EclimCompletionMethod = 'omnifunc'
 
 " Encoding "
 if has("multi_byte")
